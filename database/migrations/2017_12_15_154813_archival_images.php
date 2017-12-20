@@ -17,18 +17,22 @@ class ArchivalImages extends Migration
         Schema::create('archival_images', function (Blueprint $table) {
             $table->integer('id')->unsigned()->primary();
             $table->string('title')->nullable();
-            $table->integer('parent_id')->nullable();
-            $table->string('filetype')->nullable();
-            $table->string('digital_file_format')->nullable();
+            $table->string('collection_name')->nullable();
+            $table->string('format')->nullable();
+            $table->string('file_format')->nullable();
+            $table->string('file_size')->nullable();
+            $table->string('pixel_dimensions')->nullable();
+            $table->string('color')->nullable();
+            $table->string('physical_notes')->nullable();
             $table->string('date_display')->nullable();
+            $table->string('date_of_view')->nullable();
             $table->string('date_of_object')->nullable();
             $table->string('creator')->nullable();
             $table->string('additional_creator')->nullable();
             $table->string('main_id')->nullable();
-            $table->string('pixel_dimensions')->nullable();
             $table->string('subject_terms')->nullable();
-            $table->string('full_res')->nullable();
-            $table->string('oclc_id')->nullable();
+            $table->string('view')->nullable();
+            $table->string('image_notes')->nullable();
             $table->string('file_name')->nullable();
             $table->string('source_modified_at')->nullable();
             $table->timestamps();
