@@ -25,8 +25,8 @@ class ArchivalImages extends Migration
             $table->string('color')->nullable();
             $table->string('physical_notes')->nullable();
             $table->string('date_display')->nullable();
-            $table->string('date_of_view')->nullable();
             $table->string('date_of_object')->nullable();
+            $table->string('date_of_view')->nullable();
             $table->string('creator')->nullable();
             $table->string('additional_creator')->nullable();
             $table->string('main_id')->nullable();
