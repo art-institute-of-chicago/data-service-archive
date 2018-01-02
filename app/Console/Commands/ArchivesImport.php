@@ -63,7 +63,9 @@ class ArchivesImport extends AbstractCommand
 
         $ai->id = $this->checkEmpty($res->dmrecord);
         $ai->title = $this->checkEmpty($res->title);
+        $ai->alt_title = $this->checkEmpty($res->altern);
         $ai->collection_name = $this->checkEmpty($res->subcol);
+        $ai->archive_name = $this->checkEmpty($res->archiv);
         $ai->format = $this->checkEmpty($res->format);
         $ai->file_format = $this->checkEmpty($res->digff);
         $ai->file_size = $this->checkEmpty($res->cdmfilesize);
@@ -75,7 +77,9 @@ class ArchivesImport extends AbstractCommand
         $ai->date_of_view = $this->checkEmpty($res->viewdt);
         $ai->creator = $this->checkEmpty($res->creato);
         $ai->additional_creator = $this->checkEmpty($res->additi);
+        $ai->photographer = $this->checkEmpty($res->photog);
         $ai->main_id = $this->checkEmpty($res->collec);
+        $ai->legacy_image_id = $this->checkEmpty($res->aicneg);
         $ai->subject_terms = $this->checkEmpty($res->subjea);
         $ai->view = $this->checkEmpty($res->view);
         $ai->image_notes = $this->checkEmpty($res->descri);
