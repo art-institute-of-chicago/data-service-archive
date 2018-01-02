@@ -84,6 +84,7 @@ class ArchivesImport extends AbstractCommand
         $ai->view = $this->checkEmpty($res->view);
         $ai->image_notes = $this->checkEmpty($res->descri);
         $ai->file_name = $this->checkEmpty($res->find);
+        $ai->source_created_at = $this->checkEmpty($res->dmcreated);
         $ai->source_modified_at = $this->checkEmpty($res->dmmodified);
         $ai->save();
         

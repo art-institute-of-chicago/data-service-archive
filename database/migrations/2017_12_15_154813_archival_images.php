@@ -38,6 +38,7 @@ class ArchivalImages extends Migration
             $table->string('view')->nullable();
             $table->string('image_notes')->nullable();
             $table->string('file_name')->nullable();
+            $table->string('source_created_at')->nullable();
             $table->string('source_modified_at')->nullable();
             $table->timestamps();
         });
