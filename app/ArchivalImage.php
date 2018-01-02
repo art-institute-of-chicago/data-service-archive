@@ -14,7 +14,7 @@ class ArchivalImage extends BaseModel
      */
     public function getWebUrl()
     {
-        return "http://digital-libraries.saic.edu/cdm/singleitem/collection/mqc/id/{$this->id}";
+        return env('CONTENT_DM_RECORD_DETAIL_PREFIX', 'http://localhost/id/') .$this->id;
     }
 
 }

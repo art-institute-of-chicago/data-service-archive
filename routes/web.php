@@ -18,4 +18,7 @@ $app->get('/', function () use ($app) {
 
 $app->group(['prefix' => 'v1'], function() use ($app) {
 
+    $app->get('archival-images', 'ArchivalImageController@index');
+    $app->get('archival-images/{id}', 'ArchivalImageController@show');
+
 });
