@@ -22,7 +22,7 @@ class ArchivalImages extends Migration
             $table->string('archive_name')->nullable();
             $table->string('format')->nullable();
             $table->string('file_format')->nullable();
-            $table->string('file_size')->nullable();
+            $table->integer('file_size')->nullable();
             $table->string('pixel_dimensions')->nullable();
             $table->string('color')->nullable();
             $table->string('physical_notes')->nullable();
@@ -38,8 +38,8 @@ class ArchivalImages extends Migration
             $table->string('view')->nullable();
             $table->string('image_notes')->nullable();
             $table->string('file_name')->nullable();
-            $table->string('source_created_at')->nullable();
-            $table->string('source_modified_at')->nullable();
+            $table->timestamp('source_created_at')->nullable();
+            $table->timestamp('source_modified_at')->nullable();
             $table->timestamps();
         });
 

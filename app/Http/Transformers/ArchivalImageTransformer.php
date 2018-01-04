@@ -32,12 +32,12 @@ class ArchivalImageTransformer extends TransformerAbstract
             'photographer' => $image->photographer,
             'main_id' => $image->main_id,
             'legacy_image_id' => $image->legacy_image_id,
-            'subject_terms' => explode(';', $image->subject_terms),
+            'subject_terms' => $image->getSubjectTerms(),
             'view' => $image->view,
             'image_notes' => $image->image_notes,
             'file_name' => $image->file_name,
-            'created_at' => $image->source_created_at,
-            'modified_at' => $image->source_modified_at,
+            'created_at' => $image->source_created_at->toIso8601String(),
+            'modified_at' => $image->source_modified_at->toIso8601String(),
         ];
 
     }

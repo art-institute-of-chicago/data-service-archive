@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Scopes\SortByLastUpdatedScope;
 
 class BaseModel extends Model
 {
@@ -29,6 +30,19 @@ class BaseModel extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+
+        parent::boot();
+        static::addGlobalScope(new SortByLastUpdatedScope());
+
+    }
 
     /**
      * Scope a query to only include fake records.
