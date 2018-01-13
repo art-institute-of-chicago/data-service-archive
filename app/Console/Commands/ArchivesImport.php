@@ -6,6 +6,8 @@ use GrahamCampbell\Flysystem\Facades\Flysystem;
 
 use App\ArchivalImage;
 
+use Aic\Hub\Foundation\AbstractCommand;
+
 class ArchivesImport extends AbstractCommand
 {
 
@@ -87,7 +89,7 @@ class ArchivesImport extends AbstractCommand
         $ai->source_created_at = $this->checkEmpty($res->dmcreated);
         $ai->source_modified_at = $this->checkEmpty($res->dmmodified);
         $ai->save();
-        
+
     }
 
     private function checkEmpty($value)

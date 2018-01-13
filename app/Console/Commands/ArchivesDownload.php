@@ -6,6 +6,8 @@ use GrahamCampbell\Flysystem\Facades\Flysystem;
 
 use App\ArchivalImage;
 
+use Aic\Hub\Foundation\AbstractCommand;
+
 class ArchivesDownload extends AbstractCommand
 {
 
