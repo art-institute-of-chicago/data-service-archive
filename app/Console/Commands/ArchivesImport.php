@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
-use GrahamCampbell\Flysystem\Facades\Flysystem;
+use Illuminate\Support\Facades\Storage;
 
 use App\ArchivalImage;
+
+use Aic\Hub\Foundation\AbstractCommand;
 
 class ArchivesImport extends AbstractCommand
 {
@@ -31,7 +33,7 @@ class ArchivesImport extends AbstractCommand
         // Uncomment for testing
         // $paths = $paths->slice(0,2);
 
-        // Turn the full paths to relative for Flysystem
+        // Turn the full paths to relative for Storage
         $files = $paths->map( function( $path ) use ( $directory ) {
 
             // +1 to remove the starting forwardslash
@@ -48,14 +50,14 @@ class ArchivesImport extends AbstractCommand
     /**
      * Process a single image metadata file
      *
-     * @param string $path  Path to JSON file relative to Flysystem root
+     * @param string $path  Path to JSON file relative to Storage root
      * @return array
      */
     public function processFile( $path )
     {
 
         $file = basename( $path );
-        $contents = Flysystem::read( $file );
+        $contents = Storage::get( $file );
         $res = json_decode( $contents );
 
         $this->info('Working on #' .$res->dmrecord);
@@ -87,7 +89,7 @@ class ArchivesImport extends AbstractCommand
         $ai->source_created_at = $this->checkEmpty($res->dmcreated);
         $ai->source_modified_at = $this->checkEmpty($res->dmmodified);
         $ai->save();
-        
+
     }
 
     private function checkEmpty($value)

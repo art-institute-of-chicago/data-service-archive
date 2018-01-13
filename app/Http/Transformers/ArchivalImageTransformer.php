@@ -2,16 +2,15 @@
 
 namespace App\Http\Transformers;
 
-use App\ArchivalImage;
-use League\Fractal\TransformerAbstract;
+use Aic\Hub\Foundation\AbstractTransformer;
 
-class ArchivalImageTransformer extends TransformerAbstract
+class ArchivalImageTransformer extends AbstractTransformer
 {
 
-    public function transform(ArchivalImage $image)
+    public function transform($image)
     {
 
-        return [
+        $data = [
             'id' => $image->id,
             'title' => $image->title,
             'alternate_title' => $image->alt_title,
@@ -39,6 +38,9 @@ class ArchivalImageTransformer extends TransformerAbstract
             'created_at' => $image->source_created_at->toIso8601String(),
             'modified_at' => $image->source_modified_at->toIso8601String(),
         ];
+
+        // Enables ?fields= functionality
+        return parent::transform($data);
 
     }
 

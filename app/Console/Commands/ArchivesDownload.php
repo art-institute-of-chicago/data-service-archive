@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use GrahamCampbell\Flysystem\Facades\Flysystem;
+use Illuminate\Support\Facades\Storage;
 
-use App\ArchivalImage;
+use Aic\Hub\Foundation\AbstractCommand;
 
 class ArchivesDownload extends AbstractCommand
 {
@@ -45,14 +45,14 @@ class ArchivesDownload extends AbstractCommand
 
             $file = $res->dmrecord . '.json';
 
-            if( Flysystem::has( $file ) )
+            if( Storage::exists( $file ) )
             {
                 $this->warn('Found ' . $file);
                 $id--;
                 continue;
             }
 
-            Flysystem::put( $file, json_encode($res, JSON_PRETTY_PRINT) );
+            Storage::put( $file, json_encode($res, JSON_PRETTY_PRINT) );
 
             $this->info('Saved ' . $file);
 

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\ArchivalImage;
-use Illuminate\Http\Request;
+use Aic\Hub\Foundation\AbstractController as BaseController;
 
-class ArchivalImageController extends Controller
+class ArchivalImageController extends BaseController
 {
 
     protected $model = \App\ArchivalImage::class;

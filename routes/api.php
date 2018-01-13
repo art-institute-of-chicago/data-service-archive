@@ -11,21 +11,21 @@
 |
 */
 
-$app->get('/', function () {
-    return redirect('/v1');
+Route::get('/', function () {
+    return redirect('/api/v1/swagger.json');
 });
 
-$app->group(['prefix' => 'v1'], function() use ($app) {
+Route::group(['prefix' => 'v1'], function() {
 
-    $app->get('/', function () {
+    Route::get('/', function () {
         return redirect('/v1/swagger.json');
     });
 
-    $app->get('swagger.json', function() {
+    Route::get('swagger.json', function() {
         return response(view('swagger', ['host' => parse_url(config('app.url'), PHP_URL_HOST)]), 200, ['Content-Type' => 'application/json']);
     });
 
-    $app->get('archival-images', 'ArchivalImageController@index');
-    $app->get('archival-images/{id}', 'ArchivalImageController@show');
+    Route::get('archival-images', 'ArchivalImageController@index');
+    Route::get('archival-images/{id}', 'ArchivalImageController@show');
 
 });

@@ -13,7 +13,7 @@
     "version": "0.1"
   },
   "host": "{{ $host }}",
-  "basePath": "/v1",
+  "basePath": "/api/v1",
   "schemes": [
     "http"
   ],
