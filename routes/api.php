@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/v1');
+    return redirect('/api/v1/swagger.json');
 });
 
 Route::group(['prefix' => 'v1'], function() {
