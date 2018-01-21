@@ -35,8 +35,8 @@ class ArchivalImageTransformer extends AbstractTransformer
             'view' => $image->view,
             'image_notes' => $image->image_notes,
             'file_name' => $image->file_name,
-            'created_at' => $image->source_created_at->toIso8601String(),
-            'modified_at' => $image->source_modified_at->toIso8601String(),
+            'created_at' => $image->source_created_at ? $image->source_created_at->toIso8601String() : null,
+            'modified_at' => $image->source_modified_at ? $image->source_modified_at->toIso8601String() : null,
         ];
 
         // Enables ?fields= functionality
