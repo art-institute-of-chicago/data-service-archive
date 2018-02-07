@@ -32,6 +32,7 @@ $factory->define('App\ArchivalImage', function ($faker) {
         'view' => ucfirst($faker->word),
         'image_notes' => ucfirst($faker->word),
         'file_name' => $id .'_2.jpg',
+        'source_created_at' => $faker->date($format = 'Y-m-d'),
         'source_modified_at' => $faker->date($format = 'Y-m-d'),
     ];
 });
