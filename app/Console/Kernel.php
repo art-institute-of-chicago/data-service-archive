@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
             ->dailyAt('22:' .(config('app.env') == 'production' ? '00' : '15'))
             ->withoutOverlapping()
             ->before(function () {
-                Artisan::call('archives:download', ['--quiet' => 'default']
+                Artisan::call('archives:download', ['--quiet' => 'default']);
             })
             ->appendOutputTo(storage_path('logs/import.log'))
             ->sendOutputTo(storage_path('logs/import-last-run.log'))
