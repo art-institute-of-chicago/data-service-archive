@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\ArchivesImport::class,
         Commands\ArchivesDownload::class,
+        \Aic\Hub\Foundation\Commands\DatabaseReset::class
     ];
 
     /**
