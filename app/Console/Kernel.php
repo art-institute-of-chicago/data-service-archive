@@ -33,7 +33,6 @@ class Kernel extends ConsoleKernel
             ->before(function () {
                 Artisan::call('archives:download', ['--quiet' => 'default']);
             })
-            ->appendOutputTo(storage_path('logs/import.log'))
             ->sendOutputTo(storage_path('logs/import-last-run.log'));
 
     }
