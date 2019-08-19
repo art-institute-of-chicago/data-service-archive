@@ -3,7 +3,7 @@
 # Archives Data Service
 > A slim API in front of our institutional image archive
 
-This API standardizes and simplifies access to data that is available through the CONTENTdm API. 
+This API standardizes and simplifies access to data that is available through the CONTENTdm API.
 Clients don't have to know all the parameters that CONTENTdm's API requires, or how to filter the data.
 Nor do they need to worry about limitations in the number of records they's able to retrieve.
 They have a few simple endpoints to retrieve the data they're most likely going to need.
@@ -19,7 +19,7 @@ This project provides the following endpoints. You can see their details in swag
 
 ## Overview
 
-This API is part of a larger project at the Art Institute of Chicago to build a data hub for all of 
+This API is part of a larger project at the Art Institute of Chicago to build a data hub for all of
 our published data—a single place that our forthcoming website and future products can access all the
 data they might be interested in in a simple, normalized, RESTful way. This project provides an
 API in front of our institutional image archive that will feed into the data hub.
@@ -52,7 +52,7 @@ php artisan storage:link
 
 ## Developing
 
-First you'll need to create a `.env` file and update it to reflect your environment. We've provided an 
+First you'll need to create a `.env` file and update it to reflect your environment. We've provided an
 example file to get you started:
 
 ```shell
@@ -69,7 +69,7 @@ Then, to create the database tables and seed them with fake data, run:
 php artisan migrate --seed
 ```
 
-This will create all the tables and relationships, and fill the tables with data from the 
+This will create all the tables and relationships, and fill the tables with data from the
 [Faker](https://github.com/fzaninotto/Faker) PHP library.
 
 ### Importing real data
@@ -89,8 +89,7 @@ php artisan archives:import
 
 ## Contributing
 
-We encourage your contributions. Please fork this repository and make your changes in a separate branch. 
-We like to use [git-flow](https://github.com/nvie/gitflow) to make this process easier.
+We encourage your contributions. Please fork this repository and make your changes in a separate branch. To better understand how we organize our code, please review our [version control guidelines](https://docs.google.com/document/d/1B-27HBUc6LDYHwvxp3ILUcPTo67VFIGwo5Hiq4J9Jjw).
 
 ```bash
 # Clone the repo to your computer
@@ -103,18 +102,18 @@ cd data-service-archive
 composer install
 
 # Start a feature branch
-git flow start feature yourinitials-good-description-issuenumberifapplicable
+git checkout -b feature/good-short-description
 
 # ... make some changes, commit your code
 
 # Push your branch to GitHub
-git push origin yourinitials-good-description-issuenumberifapplicable
+git push origin feature/good-short-description
 ```
 
-Then on github.com, create a Pull Request to merge your changes into our 
-`develop` branch. 
+Then on github.com, create a Pull Request to merge your changes into our
+`develop` branch.
 
-This project is released with a Contributor Code of Conduct. By participating in 
+This project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its [terms](CODE_OF_CONDUCT.md).
 
 We also welcome bug reports and questions under GitHub's [Issues](issues).
@@ -122,6 +121,6 @@ We also welcome bug reports and questions under GitHub's [Issues](issues).
 
 ## Licensing
 
-This project is licensed under the [GNU Affero General Public License 
+This project is licensed under the [GNU Affero General Public License
 Version 3](LICENSE).
 
