@@ -5,7 +5,7 @@
     "description": "An API for the institutional image archive of the Art Institute of Chicago",
     "termsOfService": "",
     "contact": {
-      "email": "museumtechnology@artic.edu"
+      "email": "engineering@artic.edu"
     },
     "license": {
       "name": ""
