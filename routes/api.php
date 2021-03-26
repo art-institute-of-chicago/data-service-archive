@@ -15,13 +15,13 @@ Route::get('/', function () {
     return redirect('/api/v1/swagger.json');
 });
 
-Route::group(['prefix' => 'v1'], function() {
+Route::group(['prefix' => 'v1'], function () {
 
     Route::get('/', function () {
         return redirect('/v1/swagger.json');
     });
 
-    Route::get('swagger.json', function() {
+    Route::get('swagger.json', function () {
         return response(view('swagger', ['host' => parse_url(config('app.url'), PHP_URL_HOST)]), 200, ['Content-Type' => 'application/json']);
     });
 

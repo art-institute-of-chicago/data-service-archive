@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\ArchivalImage;
 
 class ArchivalImageSeeder extends AbstractSeeder
@@ -13,7 +12,7 @@ class ArchivalImageSeeder extends AbstractSeeder
     public function run()
     {
 
-        factory( ArchivalImage::class, 10 )->create();
+        factory(ArchivalImage::class, 10)->create();
 
     }
 

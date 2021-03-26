@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Relations\Relation;
 
 abstract class AbstractSeeder extends Seeder
 {
@@ -17,8 +16,8 @@ abstract class AbstractSeeder extends Seeder
     public function run()
     {
 
-        if (! method_exists($this, 'seed')) {
-            throw new InvalidArgumentException('Method [seed] missing from '.get_class($this));
+        if (!method_exists($this, 'seed')) {
+            throw new InvalidArgumentException('Method [seed] missing from ' . get_class($this));
         }
 
         \DB::statement('SET FOREIGN_KEY_CHECKS=0');
@@ -32,8 +31,8 @@ abstract class AbstractSeeder extends Seeder
     public static function clean()
     {
 
-        if (! method_exists(self::class, 'unseed')) {
-            throw new InvalidArgumentException('Method [unseed] missing from '.get_class(self));
+        if (!method_exists(self::class, 'unseed')) {
+            throw new InvalidArgumentException('Method [unseed] missing from ' . get_class(self));
         }
 
         \DB::statement('SET FOREIGN_KEY_CHECKS=0');
